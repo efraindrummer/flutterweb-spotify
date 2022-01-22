@@ -32,6 +32,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Spotify UI',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.green
+        )
+      ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         appBarTheme: const AppBarTheme(backgroundColor: Colors.black),
@@ -79,7 +84,7 @@ class Shell extends StatelessWidget {
           Expanded(
             child: Row(
               children: <Widget>[
-                SideMenu(),
+                if(MediaQuery.of(context).size.width > 800) SideMenu(),
                 Expanded(child: PlaylistScreen(playlists: lofihiphopPlaylist,))
                 //PlaylistScreen
               ],

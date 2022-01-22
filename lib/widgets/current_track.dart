@@ -19,7 +19,7 @@ class CurrentTrack extends StatelessWidget {
             const Spacer(),
             _PlayerControls(),
             const Spacer(),
-            _MoreControls()
+            if(MediaQuery.of(context).size.width > 800) _MoreControls()
           ],
         ),
       ),
@@ -32,8 +32,10 @@ class _TrackInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     final selected = context.watch<CurentTrackModel>().selected;
     if(selected == null) return const SizedBox.shrink();
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,7 +69,9 @@ class _PlayerControls extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     final selected = context.watch<CurentTrackModel>().selected;
+
     return Column(
       children: <Widget>[
         Row(
