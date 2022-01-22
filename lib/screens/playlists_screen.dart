@@ -111,7 +111,8 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
             controller: _scrollController,
             padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 60.0),
             children: <Widget>[
-              PlaylistHeader(playlist: widget.playlists,)
+              PlaylistHeader(playlist: widget.playlists),
+              TracksList(tracks: widget.playlists.songs)
             ],
           ),
         ),
