@@ -1,13 +1,17 @@
 import 'dart:io';
-
+//import default
 import 'package:desktop_window/desktop_window.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+//import model data default for the application
 import 'package:flutter_spotify_ui/data/data.dart';
-import 'package:flutter_spotify_ui/models/current_track_model.dart';
+//screens
 import 'package:flutter_spotify_ui/screens/playlists_screen.dart';
+//widgets
+import 'package:flutter_spotify_ui/models/current_track_model.dart';
 import 'package:flutter_spotify_ui/widgets/side_menu.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_spotify_ui/widgets/widgets.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -81,11 +85,7 @@ class Shell extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            height: 84.0,
-            width: double.infinity,
-            color: Colors.blue,
-          )
+          CurrentTrack()
         ],
       ),
     );
